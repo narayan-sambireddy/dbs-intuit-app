@@ -1,9 +1,14 @@
 package dbs.unicorn.teamone.dbsintuit.app.controller;
 
+import static java.util.stream.Collectors.toList;
+import static org.springframework.util.StringUtils.hasText;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import dbs.unicorn.teamone.dbsintuit.app.AppSession;
@@ -26,7 +31,25 @@ public class AppController {
 		return null != currentUser && "secret".equals(password);
 	}
 
-	public List<EmployeeEntity> employeesBySkill(String skills) {
-		return employeeRepo.findBySkills(skills);
+	@GetMapping("/skills")
+	public List<EmployeeEntity> employeesBySkill(@RequestParam(required = false) String skills) {
+		EmployeeEntity user = appSession.getCurrentUser();
+		List<EmployeeEntity> employees = employeeRepo.findBySkills(hasText(skills) ? skills : user.getSkills());
+		return employees.stream().filter(e -> user.getId() != e.getId()).collect(toList());
 	}
+
+	@GetMapping("/hobbies")
+	public List<EmployeeEntity> employeesByHobbies(@RequestParam(required = false) String hobbies) {
+		EmployeeEntity user = appSession.getCurrentUser();
+		List<EmployeeEntity> employees = employeeRepo.findByHobbies(hasText(hobbies) ? hobbies : user.getHobbies());
+		return employees.stream().filter(e -> user.getId() != e.getId()).collect(toList());
+	}
+
+	@GetMapping("/hometown")
+	public List<EmployeeEntity> employeesByHometown(@RequestParam(required = false) String hometown) {
+		EmployeeEntity user = appSession.getCurrentUser();
+		List<EmployeeEntity> employees = employeeRepo.findByHometown(hasText(hometown) ? hometown : user.getHometown());
+		return employees.stream().filter(e -> user.getId() != e.getId()).collect(toList());
+	}
+
 }
