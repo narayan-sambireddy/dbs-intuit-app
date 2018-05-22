@@ -8,4 +8,6 @@ import dbs.unicorn.teamone.dbsintuit.app.entity.EmployeeEntity;
 @Repository
 public interface EmployeeRepo extends JpaRepository<EmployeeEntity, Long> {
 
+	EmployeeEntity findByEmailId(String email);
+
 }

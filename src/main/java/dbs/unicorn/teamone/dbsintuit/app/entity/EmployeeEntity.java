@@ -39,16 +39,13 @@ public class EmployeeEntity {
 	@Column(nullable = true, name = "HOBBIES")
 	private String hobbies;
 
-	@Column(nullable = false, name = "DESIGNATION")
+	@Column(name = "DESIGNATION")
 	private String designation;
 
 	@Column(unique = true, nullable = false, name = "EMAIL_ID")
 	private String emailId;
 
-	@Column(unique = true, nullable = false, name = "MOBILE")
-	private String mobile;
-
-	@Column(nullable = false, name = "WORK_CITY")
+	@Column(name = "WORK_CITY")
 	private String workCity;
 
 	public Long getId() {
@@ -137,14 +134,6 @@ public class EmployeeEntity {
 
 	public void setEmailId(String emailId) {
 		this.emailId = emailId;
-	}
-
-	public String getMobile() {
-		return mobile;
-	}
-
-	public void setMobile(String mobile) {
-		this.mobile = mobile;
 	}
 
 	public String getWorkCity() {
