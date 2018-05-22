@@ -69,7 +69,7 @@
   <div class="content-wrapper">
     <div class="container-fluid" >
        <div class="breadcrumb"  >
-       		<span style="margin-left: 35%; font-size: 25px" >Employees with Similar Hobbies</span>
+       		<span style="margin-left: 35%; font-size: 25px" >Employees with Similar Skills</span>
       </div> 
       
       <div class="row" id="results">
@@ -119,7 +119,7 @@
     <script type="text/javascript">
     	$(document).ready(function() {
     		$.ajax({
-    			url: 'hobbies',
+    			url: 'skills',
     			success: function(res) {
     				console.log(res)
     				$('#results').html(res);

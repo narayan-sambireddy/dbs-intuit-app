@@ -38,25 +38,34 @@ public class AppController {
 	@GetMapping("/skills")
 	public String employeesBySkill(@RequestParam(required = false) String skills) {
 		EmployeeEntity user = appSession.getCurrentUser();
-		List<EmployeeEntity> employees = employeeRepo.findBySkills(hasText(skills) ? skills : user.getSkills());
-		System.out.println(employees);
-		return transformer.transformAsHTML(employees.stream().filter(e -> user.getId() != e.getId()).collect(toList()));
+		return processFurther(employeeRepo.findBySkills(hasText(skills) ? skills : user.getSkills()), user);
 	}
 
 	@GetMapping("/hobbies")
 	public String employeesByHobbies(@RequestParam(required = false) String hobbies) {
 		EmployeeEntity user = appSession.getCurrentUser();
-		List<EmployeeEntity> employees = employeeRepo.findByHobbies(hasText(hobbies) ? hobbies : user.getHobbies());
-		System.out.println(employees);
-		return transformer.transformAsHTML(employees.stream().filter(e -> user.getId() != e.getId()).collect(toList()));
+		return processFurther(employeeRepo.findByHobbies(hasText(hobbies) ? hobbies : user.getHobbies()), user);
+	}
+	
+	@GetMapping("/colleges")
+	public String employeesByCollege(@RequestParam(required = false) String college) {
+		EmployeeEntity user = appSession.getCurrentUser();
+		return processFurther(employeeRepo.findByPostGradInstituteOrUnderGradCollege(user.getPostGradInstitute(), user.getUnderGradCollege()), user);
 	}
 
 	@GetMapping("/hometown")
 	public String employeesByHometown(@RequestParam(required = false) String hometown) {
 		EmployeeEntity user = appSession.getCurrentUser();
-		List<EmployeeEntity> employees = employeeRepo.findByHometown(hasText(hometown) ? hometown : user.getHometown());
+		return processFurther(employeeRepo.findByHometown(hasText(hometown) ? hometown : user.getHometown()), user);
+	}
+	
+	private String processFurther(List<EmployeeEntity> employees, EmployeeEntity user) {
+		employees = employees.stream().filter(e -> user.getId() != e.getId()).collect(toList());
 		System.out.println(employees);
-		return transformer.transformAsHTML(employees.stream().filter(e -> user.getId() != e.getId()).collect(toList()));
+		if(employees.isEmpty()) {
+			return "<h3 style='margin-left:40%; margin-top: 10%'> No matches Found</h3>";
+		}
+		return transformer.transformAsHTML(employees);
 	}
 
 }

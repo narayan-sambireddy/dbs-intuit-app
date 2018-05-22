@@ -17,5 +17,7 @@ public interface EmployeeRepo extends JpaRepository<EmployeeEntity, Long> {
 	List<EmployeeEntity> findByHobbies(String hobbies);
 
 	List<EmployeeEntity> findByHometown(String hometown);
+	
+	List<EmployeeEntity> findByPostGradInstituteOrUnderGradCollege(String postGradInstitute, String underGradCollege);
 
 }
