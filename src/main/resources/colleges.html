@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>DBS Intuit</title>
+  <!-- Bootstrap core CSS-->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom fonts for this template-->
+  <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <!-- Custom styles for this template-->
+  <link href="css/sb-admin.css" rel="stylesheet">
+  <link href="vendor/bootstrap-multiselect/css/bootstrap-multiselect.css" rel="stylesheet">
+  <link href="css/image.css" rel="stylesheet">
+</head>
+
+<body class="fixed-nav sticky-footer bg-dark" id="page-top">
+  <!-- Navigation-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <div class="navbar-brand square" style="max-height: 45px">
+    		<img src="images/dbs_s.png">
+      		<span style="font-size: 30px; font-weight: bold;">DBS Intuit</span>
+		</div>
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+          <a class="nav-link" href="index.html">
+            <!-- <i class="fa fa-fw fa-dashboard"></i> -->
+            <span class="nav-link-text">Dashboard</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Hobbies">
+          <a class="nav-link" href="hobbies.html">
+            <span class="nav-link-text">Hobbies & Interests</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Skills">
+          <a class="nav-link" href="skills.html">
+            <span class="nav-link-text">Skills & Experience</span>
+          </a>
+        </li>
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Colleges">
+          <a class="nav-link" href="colleges.html">
+            <span class="nav-link-text">College / University</span>
+          </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav sidenav-toggler">
+        <li class="nav-item">
+          <a class="nav-link text-center" id="sidenavToggler">
+            <i class="fa fa-fw fa-angle-left"></i>
+          </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+            <i class="fa fa-fw fa-sign-out"></i>Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="content-wrapper">
+    <div class="container-fluid">
+      <!-- Breadcrumbs-->
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="#">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item active">Colleges</li>
+      </ol>
+      <!-- Area Chart Example-->
+      
+      <p>Choose hobbies from the below list. Use Control key to select multiple entries.</p>
+      
+      <div class="form-group" align="center">
+              <br />
+              <div class="form-row">
+              <div class="col-md-2"></div>
+              <div class="col-md-8">
+                <label for="collegeName">College / University</label>
+	                <select  size="1" >
+	  					<option>A.P. University of Law</option>
+						<option>Acharya N. G. Ranga Agricultural University</option>
+						<option>Acharya Nagarjuna University</option>
+						<option>Adikavi Nannaya University</option>
+						<option>Andhra Pradesh Open University</option>
+						<option>Andhra University</option>
+						<option>"Dr. B.R. Ambedkar University</option>
+						<option>"Dr. Nandamuri Taraka Rama Rao University of Health Sciences</option>
+						<option>Dravidian University</option>
+						<option>Jawaharlal Nehru Architecture and Fine Arts University</option>
+						<option>"Jawaharlal Nehru Technological University</option>
+						<option>"Jawaharlal Nehru Technological University</option>
+						<option>"Jawaharlal Nehru Technological University</option>
+						<option>Kakatiya University</option>
+						<option>Krishna University</option>
+						<option>"Mahatma Gandhi University</option>
+						<option>National Academy of Legal Studies and Research</option>
+						<option>Osmania University</option>
+						<option>Palamuru University</option>
+						<option>Potti Sreeramulu Telugu University</option>
+						<option>Rajiv Gandhi University of Knowledge Technologies</option>
+						<option>Rayalaseema University</option>
+						<option>Satavahana University</option>
+						<option>Sri Krishnadevaraya University</option>
+						<option>Sri Padmavati Mahila Visvavidyalayam</option>
+						<option>Sri Venkateswara Institute of Medical Sciences</option>
+						<option>Sri Venkateswara University</option>
+						<option>Sri Venkateswara Vedic University</option>
+						<option>Sri Venkateswara Veterinary University</option>
+						<option>Telangana University</option>
+						<option>Vikrama Simhapuri University</option>
+						<option>Yogi Vemana University</option>
+						<option>Assam Agricultural University</option>
+						<option>Dibrugarh University</option>
+						<option>Gauhati University</option>
+						<option>Krishna Kanta Handique State Open University</option>
+						<option>Aryabhatta Knowledge University</option>
+						<option>B. R. Ambedkar Bihar University</option>
+						<option>Bhupendra Narayan Mandal University</option>
+						<option>Chanakya National Law University</option>
+						<option>Jai Prakash University</option>
+						<option>Kameshwar Singh Darbhanga Sanskrit University</option>
+						<option>Lalit Narayan Mithila University</option>
+						<option>Magadh University</option>
+						<option>Maulana Mazharul Haque Arabic and Persian University</option>
+						<option>Nalanda Open University</option>
+						<option>Patna University</option>
+						<option>Rajendra Agricultural University</option>
+						<option>Tilka Manjhi Bhagalpur University</option>
+						<option>Veer Kunwar Singh University</option>
+						<option>"Panjab University</option>
+						<option>Ayush and Health Sciences University of Chhattisgarh</option>
+						<option>Bastar University</option>
+						<option>Chhattisgarh Swami Vivekanand Technical University</option>
+						<option>Hidayatullah National Law University</option>
+						<option>Indira Gandhi Agricultural University</option>
+						<option>Indira Kala Sangeet University</option>
+						<option>Kushabhau Thakre Patrakarita Avam Jansanchar University</option>
+						<option>Pandit Ravishankar Shukla University</option>
+						<option>Pandit Sundarlal Sharma (Open) University</option>
+						<option>Sarguja University</option>
+						<option>Bharat Ratna Dr. B. R. Ambedkar University</option>
+						<option>Delhi Technological University</option>
+						<option>Guru Gobind Singh Indraprastha University</option>
+						<option>Indraprastha Institute of Information Technology</option>
+						<option>"National Law University</option>
+						<option>Goa University</option>
+						<option>Anand Agricultural University</option>
+						<option>Maharaja Krishnakumarsinhji Bhavnagar University</option>
+						<option>"Rai University</option>
+						<option>Centre for Environmental and Planning Technology University</option>
+						<option>Dharamsinh Desai University</option>
+						<option>Dr. Babasaheb Ambedkar Open University</option>
+						<option>Gujarat Ayurved University</option>
+						<option>Gujarat Forensic Sciences University</option>
+						<option>Gujarat National Law University</option>
+						<option>Gujarat Technological University</option>
+						<option>Gujarat University</option>
+						<option>Hemchandracharya North Gujarat University</option>
+						<option>Krantiguru Shyamji Krishna Verma Kachchh University</option>
+						<option>Maharaja Sayajirao University of Baroda</option>
+						<option>Sardar Patel University</option>
+						<option>Sardarkrushinagar Dantiwada Agricultural University</option>
+						<option>Saurashtra University</option>
+						<option>Shree Somnath Sanskrit University</option>
+						<option>Veer Narmad South Gujarat University</option>
+						<option>Bhagat Phool Singh Mahila Vishwavidyalaya</option>
+						<option>Chaudhary Charan Singh Haryana Agricultural University</option>
+						<option>Chaudhary Devi Lal University</option>
+						<option>Deenbandhu Chhotu Ram University of Science and Technology</option>
+						<option>Guru Jambheshwar University of Science and Technology</option>
+						<option>Kurukshetra University</option>
+						<option>Lala Lajpat Rai University of Veterinary and Animal Sciences</option>
+						<option>Maharishi Dayanand University</option>
+						<option>Pandit Bhagwat Dayal Sharma University of Health Sciences</option>
+						<option>YMCA University of Science and Technology</option>
+						<option>Chaudhary Sarwan Kumar Himachal Pradesh Krishi Vishvavidyalaya</option>
+						<option>Dr. Yashwant Singh Parmar University of Horticulture and Forestry</option>
+						<option>Himachal Pradesh Technical University</option>
+						<option>Himachal Pradesh University</option>
+						<option>Baba Ghulam Shah Badhshah University</option>
+						<option>Islamic University of Science and Technology</option>
+						<option>Sher-e-Kashmir University of Agricultural Sciences and Technology of Kashmir</option>
+						<option>Shri Mata Vaishno Devi University</option>
+						<option>University of Jammu</option>
+						<option>University of Kashmir</option>
+						<option>Birsa Agricultural University</option>
+						<option>Kolhan University</option>
+						<option>National University of Study and Research in Law</option>
+						<option>Nilamber-Pitamber University</option>
+						<option>Ranchi University</option>
+						<option>Sido Kanhu University</option>
+						<option>Vinoba Bhave University</option>
+						<option>Bangalore University</option>
+						<option>Davangere University</option>
+						<option>Gulbarga University</option>
+						<option>Kannada University</option>
+						<option>Karnatak University</option>
+						<option>Karnataka Samskrit University</option>
+						<option>Karnataka State Law University</option>
+						<option>Karnataka State Open University</option>
+						<option>Karnataka State Women's University</option>
+						<option>"Karnataka Veterinary</option>
+						<option>KSGH Music and Performing Arts University</option>
+						<option>Kuvempu University</option>
+						<option>Mangalore University</option>
+						<option>National Law School of India University</option>
+						<option>Rajiv Gandhi University of Health Sciences</option>
+						<option>Rani Channamma University</option>
+						<option>Tumkur University</option>
+						<option>"University of Agricultural Sciences</option>
+						<option>"University of Agricultural Sciences</option>
+						<option>University of Mysore</option>
+						<option>Visvesvaraya Technological University</option>
+						<option>Vijayanagara Sri Krishnadevaraya University</option>
+						<option>Calicut University</option>
+						<option>Cochin University of Science and Technology</option>
+						<option>Kannur University</option>
+						<option>Kerala Agricultural University</option>
+						<option>Kerala University of Fisheries and Ocean Studies</option>
+						<option>Kerala University of Health Sciences</option>
+						<option>Kerala Veterinary and Animal Sciences University</option>
+						<option>Mahatma Gandhi University</option>
+						<option>National University of Advanced Legal Studies</option>
+						<option>Sree Sankaracharya University of Sanskrit</option>
+						<option>University of Kerala</option>
+						<option>Awdhesh Pratap Singh University</option>
+						<option>Barkatullah University</option>
+						<option>Devi Ahilya University</option>
+						<option>Jawaharlal Nehru Agricultural University</option>
+						<option>Jiwaji University</option>
+						<option>Madhya Pradesh Bhoj Open University</option>
+						<option>Maharishi Mahesh Yogi Vedic Vishwavidyalaya</option>
+						<option>Maharshi Panini Sanskrit University</option>
+						<option>Mahatma Gandhi Chitrakoot Gramoday University</option>
+						<option>Makhanlal Chaturvedi National University of Journalism</option>
+						<option>National Law Institute University</option>
+						<option>Rajiv Gandhi Technical University</option>
+						<option>Rani Durgavati University</option>
+						<option>Madhya Pradesh Pashu-Chikitsa Vigyan Vishwavidyalaya</option>
+						<option>Vikram University</option>
+						<option>Dr. Babasaheb Ambedkar Marathwada University</option>
+						<option>Dr. Babasaheb Ambedkar Technological University</option>
+						<option>Dr. Balasaheb Sawant Konkan Krishi Vidyapeeth</option>
+						<option>Dr. Panjabrao Deshmukh Krishi Vidyapeeth</option>
+						<option>Kavi Kulguru Kalidas Sanskrit Vishwavidyalaya</option>
+						<option>Maharashtra Animal and Fishery Sciences University</option>
+						<option>Maharashtra University of Health Sciences</option>
+						<option>Mahatma Phule Krishi Vidyapeeth</option>
+						<option>Marathwada Agricultural University</option>
+						<option>North Maharashtra University</option>
+						<option>Rashtrasant Tukadoji Maharaj Nagpur University</option>
+						<option>Sant Gadge Baba Amravati University</option>
+						<option>Shivaji University</option>
+						<option>Shreemati Nathibai Damodar Thackersey Women's University</option>
+						<option>Solapur University</option>
+						<option>Swami Ramanand Teerth Marathwada University</option>
+						<option>University of Mumbai</option>
+						<option>University of Pune</option>
+						<option>Yashwantrao Chavan Maharashtra Open University</option>
+						<option>Berhampur University</option>
+						<option>Biju Patnaik University of Technology</option>
+						<option>Fakir Mohan University</option>
+						<option>"National Law University</option>
+						<option>North Orissa University</option>
+						<option>Orissa University of Agriculture and Technology</option>
+						<option>Ravenshaw University</option>
+						<option>Sambalpur University</option>
+						<option>Shri Jagannath Sanskrit Vishvavidyalaya</option>
+						<option>Utkal University</option>
+						<option>Utkal University of Culture</option>
+						<option>"Veer Surendra Sai University of Technology</option>
+						<option>Baba Farid University of Health Sciences</option>
+						<option>Guru Angad Dev Veterinary and Animal Sciences University</option>
+						<option>Guru Nanak Dev University</option>
+						<option>Punjab Agricultural University</option>
+						<option>Punjab Technical University</option>
+						<option>Punjabi University</option>
+						<option>Rajiv Gandhi National University of Law</option>
+						<option>Jagadguru Ramanadacharya Rajasthan Sanskrit University</option>
+						<option>Jai Narain Vyas University</option>
+						<option>Maharaja Ganga Singh University</option>
+						<option>Maharana Pratap University of Agriculture and Technology</option>
+						<option>Maharshi Dayanand Saraswati University</option>
+						<option>Mohanlal Sukhadia University</option>
+						<option>"National Law University</option>
+						<option>Rajasthan Agricultural University</option>
+						<option>Rajasthan Ayurved University</option>
+						<option>Rajasthan Technical University</option>
+						<option>Rajasthan University of Health Sciences</option>
+						<option>University of Kota</option>
+						<option>University of Rajasthan</option>
+						<option>Vardhaman Mahaveer Open University</option>
+						<option>Alagappa University</option>
+						<option>"Anna University</option>
+						<option>"Anna University of Technology</option>
+						<option>"Anna University of Technology</option>
+						<option>"Anna University of Technology</option>
+						<option>"Anna University of Technology</option>
+						<option>Anna University of Technology Tirunelveli</option>
+						<option>Annamalai University</option>
+						<option>Bharathiar University</option>
+						<option>Bharathidasan University</option>
+						<option>Madurai Kamaraj University</option>
+						<option>Manonmaniam Sundaranar University</option>
+						<option>Mother Teresa Women's University</option>
+						<option>Periyar University</option>
+						<option>Tamil University</option>
+						<option>Tamil Nadu Agricultural University</option>
+						<option>Tamil Nadu Dr. Ambedkar Law University</option>
+						<option>Tamil Nadu Dr. M.G.R. Medical University</option>
+						<option>Tamil Nadu Open University</option>
+						<option>Tamil Nadu Physical Education and Sports University</option>
+						<option>Tamil Nadu Teacher Education University</option>
+						<option>Tamil Nadu Veterinary and Animal Sciences University</option>
+						<option>Thiruvalluvar University</option>
+						<option>University of Madras</option>
+						<option>Bundelkhand University</option>
+						<option>Chandra Shekhar Azad University of Agriculture and Technology</option>
+						<option>Chaudhary Charan Singh University</option>
+						<option>Chhatrapati Shahuji Maharaj Medical University</option>
+						<option>Chhatrapati Shahu Ji Maharaj University</option>
+						<option>Deen Dayal Upadhyay Gorakhpur University</option>
+						<option>Dr. B. R. Ambedkar University</option>
+						<option>Dr. Ram Manohar Lohia Avadh University</option>
+						<option>Dr. Ram Manohar Lohia National Law University</option>
+						<option>Dr. Shakuntala Misra Rehabilitation University</option>
+						<option>Gautam Buddha University</option>
+						<option>Gautam Buddh Technical University</option>
+						<option>M. J. P. Rohilkhand University</option>
+						<option>Mahamaya Technical University</option>
+						<option>Mahatma Gandhi Kashi Vidyapeeth</option>
+						<option>"Manyavar Sri Kanshi Ram Ji Urdu</option>
+						<option>Narendra Dev University of Agriculture and Technology</option>
+						<option>Sampurnanand Sanskrit University</option>
+						<option>Sardar Vallabhbhai Patel University of Agriculture and Technology</option>
+						<option>University of Lucknow</option>
+						<option>Uttar Pradesh King George's University of Dental Sciences</option>
+						<option>Uttar Pradesh Rajarshi Tandon Open University</option>
+						<option>Veer Bahadur Singh Purvanchal University</option>
+						<option>Doon University</option>
+						<option>G. B. Pant University of Agriculture and Technology</option>
+						<option>Kumaun University</option>
+						<option>Uttarakhand Open University</option>
+						<option>Uttarakhand Technical University</option>
+						<option>Uttaranchal Sanskrit University</option>
+						<option>Aliah University</option>
+						<option>"Bengal Engineering and Science University</option>
+						<option>Bidhan Chandra Krishi Viswavidyalaya</option>
+						<option>Jadavpur University</option>
+						<option>Netaji Subhas Open University</option>
+						<option>"Presidency University</option>
+						<option>Rabindra Bharati University</option>
+						<option>Sidho Kanho Birsha University</option>
+						<option>University of Burdwan</option>
+						<option>University of Calcutta</option>
+						<option>University of Gour Banga</option>
+						<option>University of Kalyani</option>
+						<option>University of North Bengal</option>
+						<option>Uttar Banga Krishi Vishwavidyalaya</option>
+						<option>Vidyasagar University</option>
+						<option>West Bengal State University</option>
+						<option>West Bengal National University of Juridical Sciences</option>
+						<option>West Bengal University of Animal and Fishery Sciences</option>
+						<option>West Bengal University of Health Sciences</option>
+						<option>West Bengal University of Technology</option>
+		  			</select>
+              </div>
+              </div>
+              <br />
+             <div class="form-row">
+            <div class="col-md-3"></div>
+              <div class="col-md-3">
+                <label for="exampleInputName">From Year</label>
+                <input class="form-control" id="exampleInputName" type="number" aria-describedby="nameHelp" placeholder="From Year">
+              </div>
+              <div class="col-md-3">
+                <label for="exampleInputLastName">To Year</label>
+                <input class="form-control" id="exampleInputLastName" type="number" aria-describedby="nameHelp" placeholder="To Year">
+              </div>
+              </div>
+          </div>
+          </div>
+          
+		<br />
+		<div align="center">
+		<a class="btn btn-primary btn-block" href="list.html" style="width: 200px; margin-left:25px">Submit</a>
+		
+		</div>
+		<div class="col-lg-4">
+			<br />
+	      </div>
+	</div>
+      <br />
+        </div>
+
+    <!-- /.container-fluid-->
+    <!-- /.content-wrapper-->
+    <footer class="sticky-footer">
+      <div class="container">
+        <div class="text-center">
+          <small>Copyright © DBS 2018</small>
+        </div>
+      </div>
+    </footer>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+      <i class="fa fa-angle-up"></i>
+    </a>
+    <!-- Logout Modal-->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            <a class="btn btn-primary" href="login.html">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/bootstrap-multiselect/js/bootstrap-multiselect.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Page level plugin JavaScript-->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin.min.js"></script>
+    <!-- Custom scripts for this page-->
+    <script src="js/sb-admin-charts.min.js"></script>
+</body>
+
+</html>
