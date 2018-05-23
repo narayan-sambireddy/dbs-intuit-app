@@ -114,7 +114,7 @@
           <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
           <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="login.html">Logout</a>
+            <a class="btn btn-primary" href="login.html" id="logoutLink">Logout</a>
           </div>
         </div>
       </div>
@@ -137,9 +137,22 @@
     			error: function(e) {
     				console.log(e)
     			}
-    		})
+    		});
+    		
+    		$('#logoutLink').click(function() {
+	    		$.ajax({
+	    			url: 'logout',
+	    			success: function(res) {
+	    				console.log(res)
+	    			},
+	    			error: function(e) {
+	    				console.log(e)
+	    			}
+	    		});
+    		});
     	});
     </script>
+    
   </div>
 </body>
 
