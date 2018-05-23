@@ -59,6 +59,12 @@ public class AppController {
 		appSession.setCurrentUser(currentUser);
 		return null != currentUser && "secret".equals(password);
 	}
+	
+	@GetMapping("/logout")
+	public String logout() {
+		appSession.setCurrentUser(null);
+		return "DONE";
+	}
 
 	@GetMapping("/skills")
 	public String employeesBySkill(@RequestParam(required = false) String skills) {
