@@ -23,6 +23,9 @@ public class JobPostEntity {
 
 	@Column(nullable = false, name = "LOCATION")
 	private String location;
+	
+	@Column(name = "RANK")
+	private Integer rank;
 
 	public Long getId() {
 		return id;
@@ -56,4 +59,12 @@ public class JobPostEntity {
 		this.location = location;
 	}
 
+	public Integer getRank() {
+		return rank;
+	}
+
+	public void setRank(Integer rank) {
+		this.rank = rank;
+	}
+	
 }
