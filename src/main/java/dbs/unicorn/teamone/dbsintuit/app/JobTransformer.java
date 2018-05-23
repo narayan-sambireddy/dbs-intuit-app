@@ -1,11 +1,6 @@
 package dbs.unicorn.teamone.dbsintuit.app;
 
-import static java.nio.file.Files.readAllBytes;
-import static java.nio.file.Paths.get;
-
 import java.util.List;
-
-import javax.annotation.PostConstruct;
 
 import org.springframework.stereotype.Component;
 
@@ -21,12 +16,7 @@ public class JobTransformer {
 	private static final String DIV_PREFIX = "<div class='row'><div class='col-lg-1'></div>";
 	private static final String DIV_SUFFIX = "</div><br />";
 	
-	private String jobCardHTML;
-	
-	@PostConstruct
-	public void init() throws Exception {
-		jobCardHTML = new String(readAllBytes(get(getClass().getClassLoader(). getResource("job-card.html").toURI())));
-	}
+	private static final String JOB_CARD_HTML = "<div class=\"col-lg-3 card\" style=\"margin-right: 20px\"><img src=\"images/job_logo.jpg\" alt=\"Avatar\" style=\"width: 100%\"><div class=\"container\"><h4 align=\"center\"><br /> <b>{VERTICLE}</b></h4><p align=\"center\">{DESIGNATION}</p><p align=\"center\">{LOCATION}</p></div></div>";
 	
 	public String transformAsHTML(List<JobPostEntity> jobs) {
 		StringBuilder html = new StringBuilder();
@@ -49,7 +39,7 @@ public class JobTransformer {
 	}
 	
 	public String transformAsHTML(JobPostEntity job) {
-		return jobCardHTML
+		return JOB_CARD_HTML
 						.replace(VERTICLE, job.getVerticle())
 						.replace(DESIGNATION, job.getDesignation())
 						.replace(LOCATION, job.getLocation());

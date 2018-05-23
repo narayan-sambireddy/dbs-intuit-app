@@ -26,12 +26,7 @@ public class EmployeeTransformer {
 	private static final String PGRAD = "{PGRAD}";
 	private static final String PGRADY = "{PGRADY}";
 
-	private String employeeCardHTML;
-
-	@PostConstruct
-	public void init() throws Exception {
-		employeeCardHTML = new String(readAllBytes(get(getClass().getClassLoader(). getResource("employee-card.html").toURI())));
-	}
+	private static final String EMP_CARD_HTML = "<div class=\"col-xs-12 col-sm-6 col-md-4\"><div class=\"image-flip\" ontouchstart=\"this.classList.toggle('hover');\"><div class=\"mainflip\"><div class=\"frontside\"><div class=\"card\"><div class=\"card-body text-center\"><p><img class=\" img-fluid\" src=\"images/mprofile.png\" alt=\"card image\"></p><h4 class=\"card-title\">{FULL_NAME_1}</h4><p class=\"card-text\">{DESIGNATION}</p></div></div></div><div class=\"backside\"><div class=\"card\"><div class=\"card-body text-center mt-4\"><h4 class=\"card-title\">{FULL_NAME_2}</h4><div class=\"card-text\"><table><tr><td>Designation</td><td>:</td><td>{DESIGNATION}</td>	</tr><tr><td>Skills</td><td>:</td><td>{SKILLS}</td>	</tr><tr><td>Hobbies</td><td>:</td><td>{HOBBIES}</td>	</tr><tr><td>UG</td><td>:</td><td>{UGRAD} ({UGRADY})</td></tr><tr><td>PG</td><td>:</td><td>{PGRAD} ({PGRADY})</td></tr><tr><td>Hometown</td><td>:</td><td>{HOMETOWN}</td>	</tr></table></div></div></div></div></div></div></div>";
 
 	public String transformAsHTML(List<EmployeeEntity> employees) {
 		StringBuilder html = new StringBuilder();
@@ -40,7 +35,7 @@ public class EmployeeTransformer {
 	}
 	
 	public String transformAsHTML(EmployeeEntity employee) {
-		return employeeCardHTML
+		return EMP_CARD_HTML
 			.replace(FULL_NAME_1, employee.getFullName())
 			.replace(FULL_NAME_2, employee.getFullName())
 			.replace(DESIGNATION, Objects.toString(employee.getDesignation(), "-NA-"))
