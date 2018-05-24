@@ -31,7 +31,7 @@ public class AppContext implements WebMvcConfigurer {
 		registry.addResourceHandler("pug/**").addResourceLocations("classpath:static/pug/");
 		registry.addResourceHandler("scss/**").addResourceLocations("classpath:static/scss/");
 		registry.addResourceHandler("vendor/**").addResourceLocations("classpath:static/venor/");
-		registry.addResourceHandler("*.html").addResourceLocations("classpath:static/");
+		//registry.addResourceHandler("*.html").addResourceLocations("classpath:static/");
 	}
 
 }
