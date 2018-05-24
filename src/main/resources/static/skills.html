@@ -36,7 +36,7 @@
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Hobbies">
-          <a class="nav-link" href="hobbiewView">
+          <a class="nav-link" href="hobbiesView">
             <span class="nav-link-text">Hobbies & Interests</span>
           </a>
         </li>
@@ -79,7 +79,22 @@
   <div class="content-wrapper">
     <div class="container-fluid" >
        <div class="breadcrumb"  >
-       		<span style="margin-left: 35%; font-size: 25px" >Employees with Similar Skills</span>
+       		<span style="margin-left: 40%; font-size: 25px" id="skillName">Employees with Similar Skills </span>
+       		<br />
+       		 <div class="dropdown"  style="margin-left: 50%;">
+				  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+				    Choose Skill
+				  </button>
+				  <div class="dropdown-menu">
+						<a class="dropdown-item" href="#" onclick="filterSkill(this)">Excel</a>
+						<a class="dropdown-item" href="#" onclick="filterSkill(this)">FEDAI</a>
+						<a class="dropdown-item" href="#" onclick="filterSkill(this)">Finacle</a>
+						<a class="dropdown-item" href="#" onclick="filterSkill(this)">IMEX</a>
+						<a class="dropdown-item" href="#" onclick="filterSkill(this)">Java</a>
+						<a class="dropdown-item" href="#" onclick="filterSkill(this)">Powerpoint</a>
+						<a class="dropdown-item" href="#" onclick="filterSkill(this)">Python</a>
+				  </div>
+			</div> 
       </div> 
       
       <div class="row" id="results">
@@ -151,6 +166,22 @@
 	    		});
     		});
     	});
+    	
+    	function filterSkill(e) {
+    		var skillName = e.innerHTML; 
+    		$('#skillName').html("Employees with skill : <b>" + skillName + "</b>");
+    		$.ajax({
+    			url: 'skills',
+    			data: 'skills='+skillName,
+    			success: function(res) {
+    				console.log(res)
+    				$('#results').html(res);
+    			}, 
+    			error: function(e) {
+    				console.log(e)
+    			}
+    		});
+    	}
     </script>
   </div>
 </body>

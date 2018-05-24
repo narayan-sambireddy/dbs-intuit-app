@@ -36,7 +36,7 @@
           </a>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Hobbies">
-          <a class="nav-link" href="hobbiewView">
+          <a class="nav-link" href="hobbiesView">
             <span class="nav-link-text">Hobbies & Interests</span>
           </a>
         </li>
@@ -79,7 +79,25 @@
   <div class="content-wrapper">
     <div class="container-fluid" >
        <div class="breadcrumb"  >
-       		<span style="margin-left: 35%; font-size: 25px" >Employees with Similar Hobbies</span>
+       		<span style="margin-left: 40%; font-size: 25px" id="hobbyName">Employees with Similar Hobbies </span>
+       		<br />
+       		 <div class="dropdown"  style="margin-left: 50%;">
+				  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+				    Choose Hobby
+				  </button>
+				  <div class="dropdown-menu">
+						<a class="dropdown-item" href="#" onclick="filterHobby(this)">Basketball</a>
+						<a class="dropdown-item" href="#" onclick="filterHobby(this)">Chess</a>
+						<a class="dropdown-item" href="#" onclick="filterHobby(this)">Dancing</a>
+						<a class="dropdown-item" href="#" onclick="filterHobby(this)">Designing</a>
+						<a class="dropdown-item" href="#" onclick="filterHobby(this)">Football</a>
+						<a class="dropdown-item" href="#" onclick="filterHobby(this)">Lawn Tennis</a>
+						<a class="dropdown-item" href="#" onclick="filterHobby(this)">Reading</a>
+						<a class="dropdown-item" href="#" onclick="filterHobby(this)">Singing</a>
+						<a class="dropdown-item" href="#" onclick="filterHobby(this)">Sports</a>
+						<a class="dropdown-item" href="#" onclick="filterHobby(this)">Swimming</a>
+				  </div>
+			</div> 
       </div> 
       
       <div class="row" id="results">
@@ -151,6 +169,22 @@
 	    		});
     		});
     	});
+    	
+    	function filterHobby(e) {
+    		var hobbyName = e.innerHTML; 
+    		$('#hobbyName').html("Employees with hobby : <b>" + hobbyName + "</b>");
+    		$.ajax({
+    			url: 'hobbies',
+    			data: 'hobbies='+hobbyName,
+    			success: function(res) {
+    				console.log(res)
+    				$('#results').html(res);
+    			}, 
+    			error: function(e) {
+    				console.log(e)
+    			}
+    		});
+    	}
     </script>
     
   </div>
