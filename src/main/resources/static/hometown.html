@@ -79,9 +79,36 @@
   <div class="content-wrapper">
     <div class="container-fluid" >
        <div class="breadcrumb"  >
-       		<span style="margin-left: 35%; font-size: 25px" >Employees from same Hometown / Native</span>
-      </div> 
-      
+       		<span style="margin-left: 35%; font-size: 25px" id="cityName"> Employees from same Hometown / Native  </span>
+       		<br />
+       		 <div class="dropdown"  style="margin-left: 50%;">
+				  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+				    Choose City
+				  </button>
+				  <div class="dropdown-menu">
+						<a class="dropdown-item" href="#" onclick="filterCity(this)">Bharatpur</a>
+						<a class="dropdown-item" href="#" onclick="filterCity(this)">Chennai</a>
+						<a class="dropdown-item" href="#" onclick="filterCity(this)">Delhi</a>
+						<a class="dropdown-item" href="#" onclick="filterCity(this)">Dubai</a>
+						<a class="dropdown-item" href="#" onclick="filterCity(this)">Hyderabad</a>
+						<a class="dropdown-item" href="#" onclick="filterCity(this)">Indore</a>
+						<a class="dropdown-item" href="#" onclick="filterCity(this)">Jabalpur</a>
+						<a class="dropdown-item" href="#" onclick="filterCity(this)">Kanpur</a>
+						<a class="dropdown-item" href="#" onclick="filterCity(this)">Kashmir</a>
+						<a class="dropdown-item" href="#" onclick="filterCity(this)">Kerala</a>
+						<a class="dropdown-item" href="#" onclick="filterCity(this)">Kolkata</a>
+						<a class="dropdown-item" href="#" onclick="filterCity(this)">Lucknow</a>
+						<a class="dropdown-item" href="#" onclick="filterCity(this)">Meerut</a>
+						<a class="dropdown-item" href="#" onclick="filterCity(this)">Mumbai</a>
+						<a class="dropdown-item" href="#" onclick="filterCity(this)">Pune</a>
+						<a class="dropdown-item" href="#" onclick="filterCity(this)">Ranchi</a>
+						<a class="dropdown-item" href="#" onclick="filterCity(this)">Sailu</a>
+						<a class="dropdown-item" href="#" onclick="filterCity(this)">Visakhapatnam</a>
+						<a class="dropdown-item" href="#" onclick="filterCity(this)">Vizag</a>
+						<a class="dropdown-item" href="#" onclick="filterCity(this)">Vizianagaram</a>
+				  </div>
+			</div> 
+	</div>      
       <div class="row" id="results">
 				
 	  </div>
@@ -151,6 +178,22 @@
 	    		});
     		});
     	});
+    	
+    	function filterCity(e) {
+    		var cityName = e.innerHTML; 
+    		$('#cityName').html("Employees from hometown : <b>" + cityName + "</b>");
+    		$.ajax({
+    			url: 'hometown',
+    			data: 'hometown='+cityName,
+    			success: function(res) {
+    				console.log(res)
+    				$('#results').html(res);
+    			}, 
+    			error: function(e) {
+    				console.log(e)
+    			}
+    		});
+    	}
     </script>
   </div>
 </body>

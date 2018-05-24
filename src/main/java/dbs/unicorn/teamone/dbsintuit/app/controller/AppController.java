@@ -69,25 +69,29 @@ public class AppController {
 	@GetMapping("/skills")
 	public String employeesBySkill(@RequestParam(required = false) String skills) {
 		EmployeeEntity user = appSession.getCurrentUser();
-		return processEmpResults(employeeRepo.findBySkills(hasText(skills) ? skills : user.getSkills()), user);
+		return processEmpResults(
+				employeeRepo.findBySkills(hasText(skills) ? skills : user.getSkills()), user, skills == null);
 	}
 
 	@GetMapping("/hobbies")
 	public String employeesByHobbies(@RequestParam(required = false) String hobbies) {
 		EmployeeEntity user = appSession.getCurrentUser();
-		return processEmpResults(employeeRepo.findByHobbies(hasText(hobbies) ? hobbies : user.getHobbies()), user);
+		return processEmpResults(
+				employeeRepo.findByHobbies(hasText(hobbies) ? hobbies : user.getHobbies()), user, hobbies == null);
 	}
 	
 	@GetMapping("/colleges")
 	public String employeesByCollege(@RequestParam(required = false) String college) {
 		EmployeeEntity user = appSession.getCurrentUser();
-		return processEmpResults(employeeRepo.findByPostGradInstituteOrUnderGradCollege(user.getPostGradInstitute(), user.getUnderGradCollege()), user);
+		return processEmpResults(
+				employeeRepo.findByPostGradInstituteOrUnderGradCollege(user.getPostGradInstitute(), user.getUnderGradCollege()), user, college == null);
 	}
 
 	@GetMapping("/hometown")
 	public String employeesByHometown(@RequestParam(required = false) String hometown) {
 		EmployeeEntity user = appSession.getCurrentUser();
-		return processEmpResults(employeeRepo.findByHometown(hasText(hometown) ? hometown : user.getHometown()), user);
+		return processEmpResults(
+				employeeRepo.findByHometown(hasText(hometown) ? hometown : user.getHometown()), user, hometown == null);
 	}
 	
 	@GetMapping("/jobs")
@@ -98,8 +102,10 @@ public class AppController {
 		return processJobResults(jobs);
 	}
 	
-	private String processEmpResults(List<EmployeeEntity> employees, EmployeeEntity user) {
-		employees = employees.stream().filter(e -> user.getId() != e.getId()).collect(toList());
+	private String processEmpResults(List<EmployeeEntity> employees, EmployeeEntity user, boolean excludeCurrentUser) {
+		if(excludeCurrentUser) {
+			employees = employees.stream().filter(e -> user.getId() != e.getId()).collect(toList());
+		}
 		System.out.println(employees);
 		if(employees.isEmpty()) {
 			return "<h3 style='margin-left:40%; margin-top: 10%'> No matches Found</h3>";
